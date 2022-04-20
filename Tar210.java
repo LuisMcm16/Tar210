@@ -53,13 +53,34 @@ public void baja(){
     else { pisoActual = pisoActual-1;}
     }
 
-public void pisoDeseado(){
-    Scanner sc = new Scanner (System.in);
-    int pisoDeseado = sc.nextInt();
-    if (pisoDeseado<pisoMin || pisoDeseado>pisoMax){
-        System.out.println("El piso deseado no es válido.");
-        return;} 
+    public void pisoDeseado(int pisoObjetivo){
+        Scanner sc = new Scanner (System.in);
+        // Moviendo lógica de entrada a test
+        // int pisoDeseado = sc.nextInt();
 
-}
+        // Validando el piso objetivo
+        if (pisoObjetivo<pisoMin || pisoObjetivo>pisoMax){
+            System.out.println("El piso deseado no es válido.");
+            return;} 
+
+
+        while (pisoObjetivo!=pisoActual){
+            if (pisoObjetivo > pisoActual) sube();
+            else baja();
+        }
+
+        // esto debería ir en el método pisoActual
+        System.out.println("Llegando al piso: " + pisoActual);
+
+    }
+
+    // Ejemplo 
+    public void estadoPuertas(){
+        
+        String estado = "cerradas";
+        if (puerta) estado = "abiertas";
+        
+        System.out.println("Las puertas están " + estado + " en el piso " + pisoActual);
+    }
         
 }
