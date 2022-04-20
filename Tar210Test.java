@@ -10,8 +10,10 @@ public class Tar210Test {
         elevador.cierraPuerta();
         elevador.sube();
         elevador.baja();
-        elevador.pisoDeseado();
-        /*elevador.pisoActual();
+        elevador.pisoDeseado(5);
+        elevador.baja();
+        elevador.estadoPuertas();
+        /*
         elevador.estadoPuertas();*/
 
     }
